@@ -1,0 +1,28 @@
+name: 'ae_survey'
+
+config-version: 2
+version: '1.0.0'
+require-dbt-version: [">=1.0.0", "<2.0.0"]
+
+profile: 'ae_survey'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analysis"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets:
+    - "target"
+    - "dbt_modules"
+    - "logs"
+
+seeds:
+  ae_survey:
+    survey_results:
+      +column_types:
+        Respondent ID: varchar(32)
+
+models:
+  ae_survey:
+    materialized: table

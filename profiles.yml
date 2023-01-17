@@ -1,0 +1,8 @@
+ae_survey:
+
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'ae_survey.duckdb'
+      threads: 24
