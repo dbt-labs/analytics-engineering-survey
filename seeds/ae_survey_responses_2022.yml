@@ -5,125 +5,472 @@ seeds:
     columns:
       - name: respondent_id
         description: Respondent ID 
+        tests:
+          - unique
+          - not_null
       - name: start_date
         description: Start Date 
+        tests:
+          - not_null
       - name: end_date
         description: End Date 
+        tests:
+          - not_null
       - name: dbt_used_at_org
         description: Does your organization use dbt Core or dbt Cloud today?
+        tests: 
+          - accepted_values:
+              values:
+                - "No - we don’t use dbt Core or dbt Cloud"
+                - "Yes - we use both dbt Core and dbt Cloud"
+                - "Yes - we use dbt Cloud"
+                - "Yes - we use dbt Core / open source"
+                - "Yes - we use dbt Core via another SaaS solution"
       - name: personal_dbt_experience
         description: How long have you personally been using dbt (including current and any prior job experience)?
+        tests:
+          - accepted_values:
+              values:
+                - "< 1 year"
+                - "1-2 years"
+                - "More than 2 years"
+                - "I have never used dbt"
       - name: job_title
         description: What is your job title (or the closest match)?
+        tests:
+          - accepted_values:
+              values:
+                - "Analytics Engineer"
+                - "Data Analyst"
+                - "Data Engineer"
+                - "Data Scientist"
+                - "Other"
+                - "People Manager/Director - Data Analytics"
+                - "People Manager/Director - Data Engineering"
+                - "Sales Engineer/Solutions Engineer"
+                - "Software Engineer"
       - name: base_salary_usd
         description: What is your annual salary (before taxes, deductions, bonuses, and stock options)?Please convert the amount to USD, if you are paid in a different currency.
+        tests:
+          - accepted_values:
+              values:
+                - "Under $50k"
+                - "$51k to $100k"
+                - "$101k to $150k"
+                - "$151k to $200k"
+                - "$201k to $300k"
+                - "$301k+"
+                - "Prefer not to say"
       - name: company_headquarters
         description: Where is your company headquartered?
+        tests:
+          - accepted_values:
+              values:
+                - "Africa"
+                - "Asia & Pacific"
+                - "Europe"
+                - "Middle East"
+                - "North America"
+                - "South & Latin America"
       - name: company_industry
         description: What best describes your company industry?
+        tests:
+          - accepted_values:
+              values:
+                - "Consulting / Professional Services"
+                - "Consumer Packaged Goods"
+                - "Education / Training"
+                - "Financial Services"
+                - "Government or Military"
+                - "Healthcare / Life Sciences"
+                - "Manufacturing"
+                - "Media / Entertainment"
+                - "Non-Profit"
+                - "Other"
+                - "Technology / Software"
+                - "Telecommunications"
       - name: organization_size
         description: Approximately how many people work at your organization?
+        tests:
+          - accepted_values:
+              values:
+                - "Less than 100"
+                - "101-500"
+                - "501-1,000"
+                - "1,001 – 5,000"
+                - "5,001 – 10,000"
+                - "10,001"
+                - "Not sure"
       - name: org_data_infrastructure_proportion
         description: As a percentage of your company, how many people are responsible for data infrastructure (maintaining the platforms for hosting, moving, and accessing data)?
+        tests:
+          - accepted_values:
+              values:
+                - "Less than 1%"
+                - "2-5%"
+                - "6-10%"
+                - "11-20%"
+                - "21-50%"
+                - "51-100%"
       - name: org_data_analysis_proportion
         description: As a percentage of your company, how many people are responsible for data analysis (building and analyzing data sets and reports)?
+        tests:
+          - accepted_values:
+              values:
+                - "Less than 1%"
+                - "2-5%"
+                - "6-10%"
+                - "11-20%"
+                - "21-50%"
+                - "51-100%"
       - name: multiselect_time_spent_platform
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / maintain platforms for hosting, moving, accessing data
+        tests:
+          - accepted_values:
+              values:
+                - "Build / maintain platforms for hosting, moving, accessing data"
       - name: multiselect_time_spent_datasets
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / maintain data sets to ease analysis
+        tests:
+          - accepted_values:
+              values:
+                - "Build / maintain data sets to ease analysis"
       - name: multiselect_time_spent_reports_dashboards
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / analyze reports & dashboards
+        tests:
+          - accepted_values:
+              values:
+                - "Build / analyze reports & dashboards"
       - name: multiselect_time_spent_ml_models
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / use machine learning models
+        tests:
+          - accepted_values:
+              values:
+                - "Build / use machine learning models"
       - name: multiselect_time_spent_mentorship_direct_reports
         description: Which of the following best describes how you spend most of your time? Select all that apply. Mentor / enable direct reports who do a combination of work described above
+        tests:
+          - accepted_values:
+              values:
+                - "Mentor / enable direct reports who do a combination of work described above"
       - name: multiselect_time_spent_other_free_text
         description: Which of the following best describes how you spend most of your time? Select all that apply. Other (please specify)
       - name: rate_org_marketing_analytics
         description: "Please rate how you think your organization is doing across the following areas: Marketing analytics"
+        tests:
+          - accepted_values:
+              values:
+                - "N/A - not relevant for my org"
+                - "Somewhat badly"
+                - "Somewhat well"
+                - "Very badly"
+                - "Very well"
       - name: rate_org_product_analytics
         description: "Please rate how you think your organization is doing across the following areas: Product analytics"
+        tests:
+          - accepted_values:
+              values:
+                - "N/A - not relevant for my org"
+                - "Somewhat badly"
+                - "Somewhat well"
+                - "Very badly"
+                - "Very well"
       - name: rate_org_financial_analytics
         description: "Please rate how you think your organization is doing across the following areas: Financial analytics"
+        tests:
+          - accepted_values:
+              values:
+                - "N/A - not relevant for my org"
+                - "Somewhat badly"
+                - "Somewhat well"
+                - "Very badly"
+                - "Very well"
       - name: rate_org_data_quality_transparency
         description: "Please rate how you think your organization is doing across the following areas: Data quality / transparency"
+        tests:
+          - accepted_values:
+              values:
+                - "N/A - not relevant for my org"
+                - "Somewhat badly"
+                - "Somewhat well"
+                - "Very badly"
+                - "Very well"
       - name: rate_org_cross_team_alignment_data_ownership
         description: "Please rate how you think your organization is doing across the following areas: Cross-team alignment on data ownership"
+        tests:
+          - accepted_values:
+              values:
+                - "N/A - not relevant for my org"
+                - "Somewhat badly"
+                - "Somewhat well"
+                - "Very badly"
+                - "Very well"
       - name: rate_org_data_team_productivity_agility
         description: "Please rate how you think your organization is doing across the following areas: Data team productivity & agility"
+        tests:
+          - accepted_values:
+              values:
+                - "N/A - not relevant for my org"
+                - "Somewhat badly"
+                - "Somewhat well"
+                - "Very badly"
+                - "Very well"
       - name: rate_org_enabling_self_service
         description: "Please rate how you think your organization is doing across the following areas: Enabling self-service analytics"
+        tests:
+          - accepted_values:
+              values:
+                - "N/A - not relevant for my org"
+                - "Somewhat badly"
+                - "Somewhat well"
+                - "Very badly"
+                - "Very well"
       - name: how_do_you_distribute_data_team_work
         description: Which of the following best describes how you distribute work within your data team?
+        tests:
+          - accepted_values:
+              values:
+                - "Each team member specializes by business area (e.g. supports Sales vs. Product)"
+                - "Each team member specializes by functional area (e.g. supports infra/modeling vs. reporting/BI)"
+                - "Each team member specializes in both functional and business areas. (e.g. supports infra/modeling for Sales vs. reporting/BI for Sales)"
+                - "Everyone is “full-stack” with no specialization. Projects are assigned by rotation or in an ad-hoc fashion."
       - name: how_do_you_distribute_data_team_work_other_free_text
         description: Which of the following best describes how you distribute work within your data team? Other (please describe)
       - name: how_is_your_team_measured
         description: How is your team primarily measured? Which of these best describes how you gauge success?
+        tests:
+          - accepted_values:
+              values:
+                - "Enablement of other teams (e.g. number of active users in data tool, tickets opened)"
+                - "Not sure"
+                - "Progress to financial goals (e.g. amount of money saved or business closed)"
+                - "Qualitative evaluations (e.g. performance ratings from stakeholders)"
+                - "SLA metrics (e.g. data uptime, throughput)"
       - name: how_is_your_team_measured_other_free_text
         description: How is your team primarily measured? Which of these best describes how you gauge success? Other (please describe)
       - name: agreement_org_sets_clear_goals_responsibilities_roadmap
         description: Do you agree with the following statement? My organization sets clear goals for the data team. We know our responsibilities and have a roadmap on how to execute.
+        tests:
+          - accepted_values:
+              values:
+                - "No opinion"
+                - "Somewhat agree"
+                - "Somewhat disagree"
+                - "Strongly agree"
+                - "Strongly disagree"
       - name: agreement_org_values_data_team
         description: Do you agree with the following statement? My organization values the data team. We are well-funded, respected, and included in meetings and decisions that impact our work.
+        tests:
+          - accepted_values:
+              values:
+                - "No opinion"
+                - "Somewhat agree"
+                - "Somewhat disagree"
+                - "Strongly agree"
+                - "Strongly disagree"
       - name: multiselect_economic_impact_reduced_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Reduced headcount (open or existing)
+        tests:
+          - accepted_values:
+              values:
+                - "Reduced headcount (open or existing)"
       - name: multiselect_economic_impact_downgraded_open_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Downgraded level / salary of open headcount
+        tests:
+          - accepted_values:
+              values:
+                - "Downgraded level / salary of open headcount"
       - name: multiselect_economic_impact_reduced_tooling_budget
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Reduced budget for tooling (new or existing)
+        tests:
+          - accepted_values:
+              values:
+                - "Reduced budget for tooling (new or existing)"
       - name: multiselect_economic_impact_increased_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased open headcount
+        tests:
+          - accepted_values:
+              values:
+                - "Increased open headcount"
       - name: multiselect_economic_impact_upgraded_open_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased level / salary for open headcount
+        tests:
+          - accepted_values:
+              values:
+                - "Increased level / salary for open headcount"
       - name: multiselect_economic_impact_increased_tooling_budget
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased budget for tooling (new or existing)
+        tests:
+          - accepted_values:
+              values:
+                - "Increased budget for tooling (new or existing)"
       - name: multiselect_economic_impact_no_change
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. No change
+        tests:
+          - accepted_values:
+              values:
+                - "No change"
       - name: multiselect_economic_impact_not_sure
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Not sure
+        tests:
+          - accepted_values:
+              values:
+                - "Not sure"
       - name: investment_plan_next_12m_data_warehouse_lakehouse
         description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data warehouse / lakehouse"
+        tests:
+          - accepted_values:
+              values:
+                - "Decreasing investment"
+                - "Increasing investment"
+                - "No change (maintain current investment)"
+                - "No change (no current investment)"
+                - "Not sure"
       - name: investment_plan_next_12m_extract_load
         description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data extraction and loading"
+        tests:
+          - accepted_values:
+              values:
+                - "Decreasing investment"
+                - "Increasing investment"
+                - "No change (maintain current investment)"
+                - "No change (no current investment)"
+                - "Not sure"
       - name: investment_plan_next_12m_transform_model
         description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data transformation and modeling"
+        tests:
+          - accepted_values:
+              values:
+                - "Decreasing investment"
+                - "Increasing investment"
+                - "No change (maintain current investment)"
+                - "No change (no current investment)"
+                - "Not sure"
       - name: investment_plan_next_12m_reverse_etl
         description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Reverse ETL"
+        tests:
+          - accepted_values:
+              values:
+                - "Decreasing investment"
+                - "Increasing investment"
+                - "No change (maintain current investment)"
+                - "No change (no current investment)"
+                - "Not sure"
       - name: investment_plan_next_12m_data_quality_observability
         description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data quality and observability"
+        tests:
+          - accepted_values:
+              values:
+                - "Decreasing investment"
+                - "Increasing investment"
+                - "No change (maintain current investment)"
+                - "No change (no current investment)"
+                - "Not sure"
       - name: investment_plan_next_12m_data_orchestration
         description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data orchestration"
+        tests:
+          - accepted_values:
+              values:
+                - "Decreasing investment"
+                - "Increasing investment"
+                - "No change (maintain current investment)"
+                - "No change (no current investment)"
+                - "Not sure"
       - name: investment_plan_next_12m_bi_tools
         description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Business intelligence tools"
+        tests:
+          - accepted_values:
+              values:
+                - "Decreasing investment"
+                - "Increasing investment"
+                - "No change (maintain current investment)"
+                - "No change (no current investment)"
+                - "Not sure"
       - name: multiselect_data_prep_challenge_poor_source_quality
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Source data quality is poor
+        tests:
+          - accepted_values:
+              values:
+                - "Source data quality is poor"
       - name: multiselect_data_prep_challenge_input_data_inconsistent
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Input data is hard to collect in a consistent way
+        tests:
+          - accepted_values:
+              values:
+                - "Input data is hard to collect in a consistent way"
       - name: multiselect_data_prep_challenge_ambiguous_quality_ownership
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Data ownership is ambiguous — teams disagree on how/where to address data quality issues
+        tests:
+          - accepted_values:
+              values:
+                - "Data ownership is ambiguous — teams disagree on how/where to address data quality issues"
       - name: multiselect_data_prep_challenge_transform_slow_build_update
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Transformations are too time-consuming to build and update
+        tests:
+          - accepted_values:
+              values:
+                - "Transformations are too time-consuming to build and update"
       - name: multiselect_data_prep_challenge_transform_location_reuse
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Transformations are hard to locate and re-use.
+        tests:
+          - accepted_values:
+              values:
+                - "Transformations are hard to locate and re-use."
       - name: multiselect_data_prep_challenge_docs_dependency_mgmt
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Managing data documentation and dependencies are too time-consuming
+        tests:
+          - accepted_values:
+              values:
+                - "Managing data documentation and dependencies are too time-consuming"
       - name: multiselect_data_prep_challenge_stakeholders_dont_use_trust
-        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Stakeholders don't use / don't trust data provided
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Stakeholders don’t use / don’t trust data provided
+        tests:
+          - accepted_values:
+              values:
+                - "Stakeholders don’t use / don’t trust data provided"
       - name: multiselect_data_prep_challenge_data_not_where_org_needs
-        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Data isn't where business users need it to be to inform quick decisions
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Data isn’t where business users need it to be to inform quick decisions
+        tests:
+          - accepted_values:
+              values:
+                - "Data isn’t where business users need it to be to inform quick decisions"
       - name: multiselect_data_prep_challenge_none_of_above
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. None of the above
+        tests:
+          - accepted_values:
+              values:
+                - "None of the above"
       - name: multiselect_data_prep_challenge_other_free_text
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Other (please specify)
       - name: biggest_mds_problem_metadata_sharing_across_tools
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No effective way to share metadata across tools
+        tests:
+          - accepted_values:
+              values:
+                - "No effective way to share metadata across tools"
       - name: biggest_mds_problem_team_tool_collab_clarity
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No clear understanding of how teams should collaborate in a given tool
+        tests:
+          - accepted_values:
+              values:
+                - "No clear understanding of how teams should collaborate in a given tool"
       - name: biggest_mds_problem_producer_consumer_coordination_handoff
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Coordination and handoffs between data producers and data consumers
+        tests:
+          - accepted_values:
+              values:
+                - "Coordination and handoffs between data producers and data consumers"
       - name: biggest_mds_problem_tools_learning_curve
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Learning curve to set up and maintain tools
+        tests:
+          - accepted_values:
+              values:
+                - "Learning curve to set up and maintain tools"
       - name: biggest_mds_problem_implementing_best_practice_across_tools
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Implementing best practices across all the different tools
+        tests:
+          - accepted_values:
+              values:
+                - "Implementing best practices across all the different tools"
       - name: biggest_mds_problem_other_free_text
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Other (please specify)
