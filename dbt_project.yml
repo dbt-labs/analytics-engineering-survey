@@ -17,12 +17,6 @@ clean-targets:
     - "dbt_modules"
     - "logs"
 
-seeds:
-  ae_survey:
-    survey_results:
-      +column_types:
-        Respondent ID: varchar(32)
-
 models:
   ae_survey:
     materialized: table
