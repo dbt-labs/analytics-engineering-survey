@@ -442,35 +442,35 @@ seeds:
                 - "None of the above"
       - name: data_prep_challenge_multiselect_other_free_text
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Other (please specify)
-      - name: biggest_mds_problem_metadata_sharing_across_tools
+      - name: biggest_mds_problem_multiselect_metadata_across_tools
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No effective way to share metadata across tools
         tests:
           - accepted_values:
               values:
                 - "No effective way to share metadata across tools"
-      - name: biggest_mds_problem_team_tool_collab_clarity
+      - name: biggest_mds_problem_multiselect_team_tool_collab_clarity
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No clear understanding of how teams should collaborate in a given tool
         tests:
           - accepted_values:
               values:
                 - "No clear understanding of how teams should collaborate in a given tool"
-      - name: biggest_mds_problem_producer_consumer_coordination_handoff
+      - name: biggest_mds_problem_multiselect_producer_consumer_handoff
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Coordination and handoffs between data producers and data consumers
         tests:
           - accepted_values:
               values:
                 - "Coordination and handoffs between data producers and data consumers"
-      - name: biggest_mds_problem_tools_learning_curve
+      - name: biggest_mds_problem_multiselect_tools_learning_curve
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Learning curve to set up and maintain tools
         tests:
           - accepted_values:
               values:
                 - "Learning curve to set up and maintain tools"
-      - name: biggest_mds_problem_implementing_best_practice_across_tools
+      - name: biggest_mds_problem_multiselect_best_practice_across_tools
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Implementing best practices across all the different tools
         tests:
           - accepted_values:
               values:
                 - "Implementing best practices across all the different tools"
-      - name: biggest_mds_problem_other_free_text
+      - name: biggest_mds_problem_multiselect_other_free_text
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Other (please specify)
