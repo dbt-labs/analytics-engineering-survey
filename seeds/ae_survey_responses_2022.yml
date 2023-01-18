@@ -1,0 +1,129 @@
+version: 2
+seeds:
+  - name: survey_results
+    description: The raw data from the 2022 Analytics Engineering Survey, run by dbt Labs. 
+    columns:
+      - name: respondent_id
+        description: Respondent ID 
+      - name: start_date
+        description: Start Date 
+      - name: end_date
+        description: End Date 
+      - name: dbt_used_at_org
+        description: Does your organization use dbt Core or dbt Cloud today?
+      - name: personal_dbt_experience
+        description: How long have you personally been using dbt (including current and any prior job experience)?
+      - name: job_title
+        description: What is your job title (or the closest match)?
+      - name: base_salary_usd
+        description: What is your annual salary (before taxes, deductions, bonuses, and stock options)?Please convert the amount to USD, if you are paid in a different currency.
+      - name: company_headquarters
+        description: Where is your company headquartered?
+      - name: company_industry
+        description: What best describes your company industry?
+      - name: organization_size
+        description: Approximately how many people work at your organization?
+      - name: org_data_infrastructure_proportion
+        description: As a percentage of your company, how many people are responsible for data infrastructure (maintaining the platforms for hosting, moving, and accessing data)?
+      - name: org_data_analysis_proportion
+        description: As a percentage of your company, how many people are responsible for data analysis (building and analyzing data sets and reports)?
+      - name: multiselect_time_spent_platform
+        description: Which of the following best describes how you spend most of your time? Select all that apply. Build / maintain platforms for hosting, moving, accessing data
+      - name: multiselect_time_spent_datasets
+        description: Which of the following best describes how you spend most of your time? Select all that apply. Build / maintain data sets to ease analysis
+      - name: multiselect_time_spent_reports_dashboards
+        description: Which of the following best describes how you spend most of your time? Select all that apply. Build / analyze reports & dashboards
+      - name: multiselect_time_spent_ml_models
+        description: Which of the following best describes how you spend most of your time? Select all that apply. Build / use machine learning models
+      - name: multiselect_time_spent_mentorship_direct_reports
+        description: Which of the following best describes how you spend most of your time? Select all that apply. Mentor / enable direct reports who do a combination of work described above
+      - name: multiselect_time_spent_other_free_text
+        description: Which of the following best describes how you spend most of your time? Select all that apply. Other (please specify)
+      - name: rate_org_marketing_analytics
+        description: "Please rate how you think your organization is doing across the following areas: Marketing analytics"
+      - name: rate_org_product_analytics
+        description: "Please rate how you think your organization is doing across the following areas: Product analytics"
+      - name: rate_org_financial_analytics
+        description: "Please rate how you think your organization is doing across the following areas: Financial analytics"
+      - name: rate_org_data_quality_transparency
+        description: "Please rate how you think your organization is doing across the following areas: Data quality / transparency"
+      - name: rate_org_cross_team_alignment_data_ownership
+        description: "Please rate how you think your organization is doing across the following areas: Cross-team alignment on data ownership"
+      - name: rate_org_data_team_productivity_agility
+        description: "Please rate how you think your organization is doing across the following areas: Data team productivity & agility"
+      - name: rate_org_enabling_self_service
+        description: "Please rate how you think your organization is doing across the following areas: Enabling self-service analytics"
+      - name: how_do_you_distribute_data_team_work
+        description: Which of the following best describes how you distribute work within your data team?
+      - name: how_do_you_distribute_data_team_work_other_free_text
+        description: Which of the following best describes how you distribute work within your data team? Other (please describe)
+      - name: how_is_your_team_measured
+        description: How is your team primarily measured? Which of these best describes how you gauge success?
+      - name: how_is_your_team_measured_other_free_text
+        description: How is your team primarily measured? Which of these best describes how you gauge success? Other (please describe)
+      - name: agreement_org_sets_clear_goals_responsibilities_roadmap
+        description: Do you agree with the following statement? My organization sets clear goals for the data team. We know our responsibilities and have a roadmap on how to execute.
+      - name: agreement_org_values_data_team
+        description: Do you agree with the following statement? My organization values the data team. We are well-funded, respected, and included in meetings and decisions that impact our work.
+      - name: multiselect_economic_impact_reduced_headcount
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. Reduced headcount (open or existing)
+      - name: multiselect_economic_impact_downgraded_open_headcount
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. Downgraded level / salary of open headcount
+      - name: multiselect_economic_impact_reduced_tooling_budget
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. Reduced budget for tooling (new or existing)
+      - name: multiselect_economic_impact_increased_headcount
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased open headcount
+      - name: multiselect_economic_impact_upgraded_open_headcount
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased level / salary for open headcount
+      - name: multiselect_economic_impact_increased_tooling_budget
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased budget for tooling (new or existing)
+      - name: multiselect_economic_impact_no_change
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. No change
+      - name: multiselect_economic_impact_not_sure
+        description: How have the economic conditions in 2022 affected your data team? Select all that apply. Not sure
+      - name: investment_plan_next_12m_data_warehouse_lakehouse
+        description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data warehouse / lakehouse"
+      - name: investment_plan_next_12m_extract_load
+        description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data extraction and loading"
+      - name: investment_plan_next_12m_transform_model
+        description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data transformation and modeling"
+      - name: investment_plan_next_12m_reverse_etl
+        description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Reverse ETL"
+      - name: investment_plan_next_12m_data_quality_observability
+        description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data quality and observability"
+      - name: investment_plan_next_12m_data_orchestration
+        description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Data orchestration"
+      - name: investment_plan_next_12m_bi_tools
+        description: "How is your team thinking about investment in the following areas of the modern data stack over the next 12 months: Business intelligence tools"
+      - name: multiselect_data_prep_challenge_poor_source_quality
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Source data quality is poor
+      - name: multiselect_data_prep_challenge_input_data_inconsistent
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Input data is hard to collect in a consistent way
+      - name: multiselect_data_prep_challenge_ambiguous_quality_ownership
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Data ownership is ambiguous — teams disagree on how/where to address data quality issues
+      - name: multiselect_data_prep_challenge_transform_slow_build_update
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Transformations are too time-consuming to build and update
+      - name: multiselect_data_prep_challenge_transform_location_reuse
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Transformations are hard to locate and re-use.
+      - name: multiselect_data_prep_challenge_docs_dependency_mgmt
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Managing data documentation and dependencies are too time-consuming
+      - name: multiselect_data_prep_challenge_stakeholders_dont_use_trust
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Stakeholders don't use / don't trust data provided
+      - name: multiselect_data_prep_challenge_data_not_where_org_needs
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Data isn't where business users need it to be to inform quick decisions
+      - name: multiselect_data_prep_challenge_none_of_above
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. None of the above
+      - name: multiselect_data_prep_challenge_other_free_text
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Other (please specify)
+      - name: biggest_mds_problem_metadata_sharing_across_tools
+        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No effective way to share metadata across tools
+      - name: biggest_mds_problem_team_tool_collab_clarity
+        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No clear understanding of how teams should collaborate in a given tool
+      - name: biggest_mds_problem_producer_consumer_coordination_handoff
+        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Coordination and handoffs between data producers and data consumers
+      - name: biggest_mds_problem_tools_learning_curve
+        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Learning curve to set up and maintain tools
+      - name: biggest_mds_problem_implementing_best_practice_across_tools
+        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Implementing best practices across all the different tools
+      - name: biggest_mds_problem_other_free_text
+        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Other (please specify)
