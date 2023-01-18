@@ -123,37 +123,37 @@ seeds:
                 - "11-20%"
                 - "21-50%"
                 - "51-100%"
-      - name: multiselect_time_spent_platform
+      - name: time_spent_multiselect_platform
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / maintain platforms for hosting, moving, accessing data
         tests:
           - accepted_values:
               values:
                 - "Build / maintain platforms for hosting, moving, accessing data"
-      - name: multiselect_time_spent_datasets
+      - name: time_spent_multiselect_datasets
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / maintain data sets to ease analysis
         tests:
           - accepted_values:
               values:
                 - "Build / maintain data sets to ease analysis"
-      - name: multiselect_time_spent_reports_dashboards
+      - name: time_spent_multiselect_reports_dashboards
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / analyze reports & dashboards
         tests:
           - accepted_values:
               values:
                 - "Build / analyze reports & dashboards"
-      - name: multiselect_time_spent_ml_models
+      - name: time_spent_multiselect_ml_models
         description: Which of the following best describes how you spend most of your time? Select all that apply. Build / use machine learning models
         tests:
           - accepted_values:
               values:
                 - "Build / use machine learning models"
-      - name: multiselect_time_spent_mentorship_direct_reports
+      - name: time_spent_multiselect_mentorship_direct_reports
         description: Which of the following best describes how you spend most of your time? Select all that apply. Mentor / enable direct reports who do a combination of work described above
         tests:
           - accepted_values:
               values:
                 - "Mentor / enable direct reports who do a combination of work described above"
-      - name: multiselect_time_spent_other_free_text
+      - name: time_spent_multiselect_other_free_text
         description: Which of the following best describes how you spend most of your time? Select all that apply. Other (please specify)
       - name: rate_org_marketing_analytics
         description: "Please rate how you think your organization is doing across the following areas: Marketing analytics"
@@ -268,49 +268,49 @@ seeds:
                 - "Somewhat disagree"
                 - "Strongly agree"
                 - "Strongly disagree"
-      - name: multiselect_economic_impact_reduced_headcount
+      - name: economic_impact_multiselect_reduced_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Reduced headcount (open or existing)
         tests:
           - accepted_values:
               values:
                 - "Reduced headcount (open or existing)"
-      - name: multiselect_economic_impact_downgraded_open_headcount
+      - name: economic_impact_multiselect_downgraded_open_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Downgraded level / salary of open headcount
         tests:
           - accepted_values:
               values:
                 - "Downgraded level / salary of open headcount"
-      - name: multiselect_economic_impact_reduced_tooling_budget
+      - name: economic_impact_multiselect_reduced_tooling_budget
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Reduced budget for tooling (new or existing)
         tests:
           - accepted_values:
               values:
                 - "Reduced budget for tooling (new or existing)"
-      - name: multiselect_economic_impact_increased_headcount
+      - name: economic_impact_multiselect_increased_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased open headcount
         tests:
           - accepted_values:
               values:
                 - "Increased open headcount"
-      - name: multiselect_economic_impact_upgraded_open_headcount
+      - name: economic_impact_multiselect_upgraded_open_headcount
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased level / salary for open headcount
         tests:
           - accepted_values:
               values:
                 - "Increased level / salary for open headcount"
-      - name: multiselect_economic_impact_increased_tooling_budget
+      - name: economic_impact_multiselect_increased_tooling_budget
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Increased budget for tooling (new or existing)
         tests:
           - accepted_values:
               values:
                 - "Increased budget for tooling (new or existing)"
-      - name: multiselect_economic_impact_no_change
+      - name: economic_impact_multiselect_no_change
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. No change
         tests:
           - accepted_values:
               values:
                 - "No change"
-      - name: multiselect_economic_impact_not_sure
+      - name: economic_impact_multiselect_not_sure
         description: How have the economic conditions in 2022 affected your data team? Select all that apply. Not sure
         tests:
           - accepted_values:
@@ -386,61 +386,61 @@ seeds:
                 - "No change (maintain current investment)"
                 - "No change (no current investment)"
                 - "Not sure"
-      - name: multiselect_data_prep_challenge_poor_source_quality
+      - name: data_prep_challenge_multiselect_poor_source_quality
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Source data quality is poor
         tests:
           - accepted_values:
               values:
                 - "Source data quality is poor"
-      - name: multiselect_data_prep_challenge_input_data_inconsistent
+      - name: data_prep_challenge_multiselect_input_data_inconsistent
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Input data is hard to collect in a consistent way
         tests:
           - accepted_values:
               values:
                 - "Input data is hard to collect in a consistent way"
-      - name: multiselect_data_prep_challenge_ambiguous_quality_ownership
+      - name: data_prep_challenge_multiselect_ambiguous_quality_ownership
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Data ownership is ambiguous — teams disagree on how/where to address data quality issues
         tests:
           - accepted_values:
               values:
                 - "Data ownership is ambiguous — teams disagree on how/where to address data quality issues"
-      - name: multiselect_data_prep_challenge_transform_slow_build_update
+      - name: data_prep_challenge_multiselect_transform_slow_build_update
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Transformations are too time-consuming to build and update
         tests:
           - accepted_values:
               values:
                 - "Transformations are too time-consuming to build and update"
-      - name: multiselect_data_prep_challenge_transform_location_reuse
+      - name: data_prep_challenge_multiselect_transform_location_reuse
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Transformations are hard to locate and re-use.
         tests:
           - accepted_values:
               values:
                 - "Transformations are hard to locate and re-use."
-      - name: multiselect_data_prep_challenge_docs_dependency_mgmt
+      - name: data_prep_challenge_multiselect_docs_dependency_mgmt
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Managing data documentation and dependencies are too time-consuming
         tests:
           - accepted_values:
               values:
                 - "Managing data documentation and dependencies are too time-consuming"
-      - name: multiselect_data_prep_challenge_stakeholders_dont_use_trust
+      - name: data_prep_challenge_multiselect_stakeholders_dont_use_trust
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Stakeholders don’t use / don’t trust data provided
         tests:
           - accepted_values:
               values:
                 - "Stakeholders don’t use / don’t trust data provided"
-      - name: multiselect_data_prep_challenge_data_not_where_org_needs
+      - name: data_prep_challenge_multiselect_data_not_where_org_needs
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Data isn’t where business users need it to be to inform quick decisions
         tests:
           - accepted_values:
               values:
                 - "Data isn’t where business users need it to be to inform quick decisions"
-      - name: multiselect_data_prep_challenge_none_of_above
+      - name: data_prep_challenge_multiselect_none_of_above
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. None of the above
         tests:
           - accepted_values:
               values:
                 - "None of the above"
-      - name: multiselect_data_prep_challenge_other_free_text
+      - name: data_prep_challenge_multiselect_other_free_text
         description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Other (please specify)
       - name: biggest_mds_problem_metadata_sharing_across_tools
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No effective way to share metadata across tools
