@@ -1,6 +1,6 @@
 version: 2
 seeds:
-  - name: survey_results
+  - name: ae_survey_responses_2022
     description: The raw data from the 2022 Analytics Engineering Survey, run by dbt Labs. 
     columns:
       - name: respondent_id
@@ -154,7 +154,12 @@ seeds:
               values:
                 - "Mentor / enable direct reports who do a combination of work described above"
       - name: time_spent_multiselect_other_free_text
-        description: Which of the following best describes how you spend most of your time? Select all that apply. Other (please specify)
+        description: Which of the following best describes how you spend most of your time? Select all that apply. Other (please specify). 1 specifies that a free text response was given.
+        tests:
+          - accepted_values:
+              quote: false
+              values:
+                - 1
       - name: rate_org_marketing_analytics
         description: "Please rate how you think your organization is doing across the following areas: Marketing analytics"
         tests:
@@ -235,7 +240,13 @@ seeds:
                 - "Each team member specializes in both functional and business areas. (e.g. supports infra/modeling for Sales vs. reporting/BI for Sales)"
                 - "Everyone is “full-stack” with no specialization. Projects are assigned by rotation or in an ad-hoc fashion."
       - name: how_do_you_distribute_data_team_work_other_free_text
-        description: Which of the following best describes how you distribute work within your data team? Other (please describe)
+        description: Which of the following best describes how you distribute work within your data team? Other (please describe). 1 specifies that a free text response was given.
+        tests:
+          - accepted_values:
+              quote: false
+              values:
+                - 1
+
       - name: how_is_your_team_measured
         description: How is your team primarily measured? Which of these best describes how you gauge success?
         tests:
@@ -247,7 +258,12 @@ seeds:
                 - "Qualitative evaluations (e.g. performance ratings from stakeholders)"
                 - "SLA metrics (e.g. data uptime, throughput)"
       - name: how_is_your_team_measured_other_free_text
-        description: How is your team primarily measured? Which of these best describes how you gauge success? Other (please describe)
+        description: How is your team primarily measured? Which of these best describes how you gauge success? Other (please describe). 1 specifies that a free text response was given.
+        tests:
+          - accepted_values:
+              quote: false
+              values:
+                - 1
       - name: agreement_org_sets_clear_goals_responsibilities_roadmap
         description: Do you agree with the following statement? My organization sets clear goals for the data team. We know our responsibilities and have a roadmap on how to execute.
         tests:
@@ -441,7 +457,12 @@ seeds:
               values:
                 - "None of the above"
       - name: data_prep_challenge_multiselect_other_free_text
-        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Other (please specify)
+        description: What does your team find most challenging about the process of preparing data for analysis? Select your top three. Other (please specify). 1 specifies that a free text response was given.
+        tests:
+          - accepted_values:
+              quote: false
+              values:
+                - 1
       - name: biggest_mds_problem_multiselect_metadata_across_tools
         description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply No effective way to share metadata across tools
         tests:
@@ -473,4 +494,9 @@ seeds:
               values:
                 - "Implementing best practices across all the different tools"
       - name: biggest_mds_problem_multiselect_other_free_text
-        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Other (please specify)
+        description: What are the biggest problems still facing the modern data stack — the tech and tools used to collect, process, and store data — today? Select all that apply Other (please specify). 1 specifies that a free text response was given.
+        tests:
+          - accepted_values:
+              quote: false
+              values:
+                - 1
